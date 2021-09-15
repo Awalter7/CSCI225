@@ -1,0 +1,463 @@
+#font1 {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 26px;
+    letter-spacing: 5px;
+    word-spacing: 20px;
+    color: #000000;
+    font-weight: 700;
+    text-decoration: none solid rgb(77, 23, 72);
+    font-style: normal;
+    font-variant: normal;
+    text-transform: uppercase;
+}
+#font2 {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    color: #000000;
+    font-weight: 700;
+    text-decoration: none solid rgb(77, 23, 72);
+    font-style: normal;
+    font-variant: normal;
+    text-transform: uppercase;
+}
+#font3 {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    color: #000000;
+    font-weight: 700;
+    text-decoration: none solid rgb(77, 23, 72);
+    font-style: normal;
+    font-variant: normal;
+    text-transform: uppercase;
+}
+ul{
+    position: fixed;
+    top: -20;
+    left: 0;
+    right: 0;
+    border-radius: 0px;
+    list-style-type: none;
+    overflow: hidden;
+    background-color: #202225;
+}
+#navbarfont{
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    color: #000000;
+    font-weight: 700;
+    text-decoration: none solid rgb(77, 23, 72);
+    font-style: normal;
+    font-variant: normal;
+    text-transform: uppercase;
+}
+#containerfont{
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    color: #000000;
+    font-weight: 700;
+    text-decoration: none solid rgb(77, 23, 72);
+    font-style: normal;
+    font-variant: normal;
+    text-transform: uppercase;
+}
+#parallaxfont {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 30px;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    color: #000000;
+    font-weight: 700;
+    text-decoration: none solid rgb(77, 23, 72);
+    font-style: normal;
+    font-variant: normal;
+    text-transform: uppercase;
+}
+#scrollfont {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 30px;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    color: #000000;
+    font-weight: 700;
+    text-decoration: none solid rgb(77, 23, 72);
+    font-style: normal;
+    font-variant: normal;
+    text-transform: uppercase;
+}
+#introductionfont{
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    color: rgba(182, 165, 182, 0.637);
+    font-weight: 700;
+    text-decoration: none solid rgb(77, 23, 72);
+    font-style: normal;
+    font-variant: normal;
+    text-transform: uppercase;
+}
+#assignmentfont{
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    color: rgba(182, 165, 182, 0.637);
+    font-weight: 700;
+    text-decoration: none solid rgb(77, 23, 72);
+    font-style: normal;
+    font-variant: normal;
+    text-transform: uppercase;
+}
+#portfoliofont{
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    color: rgba(182, 165, 182, 0.637);
+    font-weight: 700;
+    text-decoration: none solid rgb(77, 23, 72);
+    font-style: normal;
+    font-variant: normal;
+    text-transform: uppercase;
+}
+#footerfont{
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12px;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    color: rgba(182, 165, 182, 0.637);
+    font-weight: 700;
+    text-decoration: none solid rgb(77, 23, 72);
+    font-style: normal;
+    font-variant: normal;
+    text-transform: uppercase;
+}
+legend h1{
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 28px;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    color: black;
+    font-weight: 700;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: uppercase;
+}
+#navf1{
+    float: left;
+}
+#navf2{
+    float: left;
+}
+
+
+.hubGroup{
+    position: relative;
+    height: 150px;
+    width: 110%;
+    left: -10;
+    background-color:  #202225;
+    border-bottom: 3px solid;
+    animation: Bordercolor 3s linear infinite ;
+}
+
+.container{
+   position: relative;
+   width: 150%;
+   height: 8vh;
+   display: flex;
+   overflow:  hidden;
+
+
+}
+
+.text-box{
+    position: relative;
+    top: -20%;
+    left: 0;
+    width: 100%;
+    height: 160%;
+    background: #333;
+}
+
+.text-box h2{
+    position: absolute;
+    top: 20%;
+    left: 0;
+    height: 30px;
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    color: rgba(182, 163, 182, 0.555);
+    animation: Scrolling 10s linear infinite;
+}
+
+@keyframes Scrolling{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes Bordercolor{
+    0% {border-color: #cc4b7c;}
+    20% {border-color: rgb(63, 12, 55);}
+    40% {border-color: rgb(233, 89, 214);}
+    60% {border-color: rgb(56, 156, 196);}
+    80% {border-color: rgb(13, 177, 206)}
+    100% {border-color: rgb(126, 55, 184)}
+}
+
+.parallax{
+    position: absolute;
+    align-self: center;
+    left: 0;
+    width: 100%;
+    background: url("https://w.wallhaven.cc/full/13/wallhaven-13ypx1.png")
+        repeat fixed 100%;
+        height: 1000px;
+    
+}
+.parallax h1{
+    position: relative;
+    text-align: center;
+    right: 125px;
+    top: 300px;
+
+}
+
+
+.introduction{
+    position: relative;
+    margin-left: 3%;
+    top: 10%;
+    width: 30%;
+    text-align: center;
+    border-top: 1px rgba(182, 165, 182, 0.637) solid;
+}
+
+.assignment{
+    position: absolute;
+    left: 35%;
+    top: 10%;
+    width: 23%;
+    height: 10%;
+    text-align: center;
+    border-top: 1px rgba(182, 165, 182, 0.637) solid;
+}
+.assignment li{
+    float: unset;
+}
+
+.portfolio{
+    position: absolute;
+    left: 60%;
+    top: 10%;
+    width: 30%;
+    height: 10%;
+    text-align: center;
+    border-top: 1px rgba(182, 165, 182, 0.637) solid;
+}
+.schedule{
+    position: relative;
+    top: 1850px;
+    height:200px;
+    text-align: center;
+}
+.center{
+    position: absolute;
+    display: flex;
+    top: 1300px;
+    height: 600px;
+    width: 110%;
+    left: -10;
+    align-self: center;
+    font-size: 30px;
+    background-color: #202225;
+}
+
+.contact{
+    position: relative;
+    margin-top: 160%;
+    height: 80px;
+    width: 110%;
+    left: -7;
+    font-size: 30px;
+    background-color: #202225bd;
+
+
+}
+.layer fieldset{
+    border-left: hidden; 
+    border-bottom: hidden;
+    border-right: hidden;
+    animation: Bordercolor 3s linear infinite ;
+}
+.schedule fieldset{
+    border-left: hidden; 
+    border-bottom: hidden;
+    border-right: hidden;
+    border-color: black;
+}
+li {
+    float: right;
+}
+#home {
+    float: left;
+    left: -30;
+}
+#home a{
+    display: inline-block;
+    color: rgba(182, 165, 182, 0.781);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+#home a:hover{
+    border-bottom: 3px solid;
+    animation: Bordercolor 3s linear infinite ;
+}
+li a {
+    display: inline-block;
+    color: rgba(182, 165, 182, 0.781);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+li a:hover {
+    border-bottom: 3px solid;
+    animation: Bordercolor 3s linear infinite ;
+}
+#logo{
+    position: relative;
+    float: left;
+    top: 10px;
+    left: 30px;
+}
+.background{
+    position: absolute;
+
+    height: auto;
+    top: 100px;
+    left: 20%;
+    height: 700;
+    right: 20%;
+    border-radius: 3px;
+    background: url("https://w.wallhaven.cc/full/13/wallhaven-13ypx1.png")
+    repeat fixed 100%;
+    background-size: cover;
+
+}
+.layer{
+    position: absolute;
+    left: 20%;
+    top: 100px;
+    height: 700;
+    right: 20%;
+    text-align: center;
+    background-color: #202225bd;
+    border-radius: 3px;
+    box-shadow: 4px 3px 8px 1px #202225;
+    -webkit-box-shadow: 4px 3px 8px 1px #202225;
+}
+.layer input{
+    color: rgba(182, 165, 182, 0.781);
+    border: 0px;
+    border-radius: 3px;
+}
+#reset a{
+    border: 3px solid black;
+}
+.line{
+    position: relative;
+    top: 80px;
+    left: 10%;
+    right: 50px;
+    width: 80%;
+    border-radius: 3px;
+    border: 1px solid;
+    animation: Bordercolor 6s linear infinite;
+}
+.tg  {
+    display: inline;
+    position: relative;
+    border-collapse:collapse;
+    border-spacing:0;
+}
+.tg td{
+    border-color:black;
+    border-style:solid;
+    border-width:1px;
+    font-family:Arial, sans-serif;
+    font-size:14px;
+    overflow:hidden;
+    padding:0px 20px;
+    word-break:normal;}
+.tg th{
+    border-color:black;
+    border-style:solid;
+    border-width:1px;
+    font-family:Arial, sans-serif;
+    font-size:14px;
+    font-weight:normal;
+    overflow:hidden;
+    padding:0px 20px;word-break:normal;}
+.tg .tg-oq35{
+    background-color:#333333;
+    border-color:inherit;
+    text-align:left;
+    vertical-align:top
+}
+.tg .tg-xvu9{background-color:#de65dd;
+    border-color:inherit;
+    text-align:left;
+    vertical-align:top
+}
+.tg .tg-kcks{
+    background-color:#F56B00;
+    border-color:inherit;
+    text-align:left;
+    vertical-align:top
+}
+.tg .tg-d52n{
+    background-color:#32cb00;
+    border-color:inherit;
+    text-align:left;
+    vertical-align:top
+}
+.tg .tg-0pky{
+    border-color:inherit;
+    text-align:left;
+    vertical-align:top
+}
+.tg .tg-8izk{
+    background-color:#ed2d97;
+    border-color:inherit;
+    text-align:left;
+    vertical-align:top
+}
+.tg .tg-3wb8{
+    background-color:#f56b00;
+    border-color:inherit;
+    text-align:left;
+    vertical-align:top}
+.tg .tg-tw5s{
+    background-color:#fe0000;
+    border-color:inherit;
+    text-align:left;
+    vertical-align:top
+}
+
+
+
+
