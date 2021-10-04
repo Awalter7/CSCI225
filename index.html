@@ -1,31 +1,52 @@
 <!DOCTYPE html>
 <html>
     <head>
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <title>CSCI Homepage of Austin Walter</title>
         <style>
+            body{
+                background-image: url(img/pixel-jeff-clipa-s.gif);
+                color: rgba(255, 255, 255, 0.479);
+                text-shadow: 5px 5px 5px rgb(0, 0, 0);
+                font-family: sans-serif;
+            }
+            body h1{
+                font-size: 50px;
+                font-family: myfont;
+            }
+            @font-face {
+                font-family: myfont;
+                src: url(font/MANICMINER.ttf) format("truetype");
+            }
         </style>
         <link rel ="stylesheet" href="css/main.css">
     </head>
     
     <body>
 
-        <h1>Welcome to Austins website</h1>
+        
         <div class = "navbar">
             <ul>
                 <li ><a href="https://usca.edu/">USCA main website</a></li>
                 <li><a href="#assignment">Assignment</a></li>
                 <li><a href="#contact">Contact Information</a></li>
-                <li><a href="https://github.com/awalter7">GitHub</a></li> 
+                <li id = "gitlink"><a href="https://github.com/awalter7">GitHub</a></li> 
                 <li><a href="https://youtu.be/tHuu6Ysckmg">Youtube Video</a></li> 
             </ul>
+        </div>
+        <div class = "underlaycenter">
+        </div>
+        <div class = "underlayleft">
+        </div>
+        <div class = "underlayright">
         </div>
         <div class = "center">
 
             <div class = "introduction"> 
                 <h1>Introduction</h1>
-                <p>
+                <p id = "pIntro">
                     Hello, my name is Austin. Im a computer science major at USCA. This is a brief website to demostrate my developing programming skills. The languages I currently know are python, java, C, C#, visual basic, and android studio. Although that may not seem like much, over the cource of this website development, I will have a firm grasp on html, css, java script and many others. Not only will this website show those skills it will also allow me to post and share any other programming projects I may be working on. 
                 </p>
                 <img src="img/austin_Logo-removebg-preview.png" alt="Austin img">
@@ -36,18 +57,25 @@
             <a id="assignment"></a>
             <div class = "assignment"> 
                 <h1>Assignments</h1>
-                <ol>
+                <ol id = "olAssignment">
                     <li><a href="doc/Assignment1.pdf">Assignment 1</a></li>
-                    <li><a href="doc/Assignment2.pdf">Assignment 2</a></li>
                         <ul>
-                            <li><a href="ContactMe.html">Contact Me Form</a></li>
+                            <li><p>A simple assignment demenstrating my fundamental understanding up html code structure and format.</p></li>
                         </ul>
+                    <li><a href="doc/Assignment2.pdf">Assignment 2</a></li>
+                    <ul>
+                        <li><p>This assignment demenstrated my understanding of Forms and their elements with the conact form page</p></li>
+                    </ul>
+                    <li><a href="doc/Assignment3.pdf">Assignment 3</a></li>
+                    <ul>
+                        <li><p>This assignment demenstrated my understanding of CSS and page flow/layout</p></li>
+                    </ul>
                 </ol>
             </div>
 
             <div class = "portfolio"> 
                 <h1>Portfolio</h1>
-                <ol>
+                <ol id ="olPort">
                         <li>I dont have any projects to add yet</li>
                         <li>please dont dock my points for this</li>
                 </ol>
@@ -56,19 +84,22 @@
             <a id="contact"></a>
             <div class = "contact">
                 <br>
-                <p>
-                    Contact Information:&nbsp; 
-                    <a href="aawalter@usca.edu">Email &nbsp;</a> 
+                <h1>Contact Me</h1>
+                <p id = "pContact">
+                    Email:
+                    <a href="aawalter@usca.edu">Email Link &nbsp;</a> 
+                    <br>
                     <a href="https://discord.com/">Discord:&nbsp; </a>
                     sñor Beast#9103
+                    <br>
+                    <a href="ContactMe.html">Contact Me Form</a>
     
                 </p>
             </div>
         </div>
         <div class = "schedule">
-            <fieldset>
-                <legend><h1>Schedule</h1></legend>
-                <table class="tg">
+                <h1>Schedule</h1>
+                <table class="tg" id = "tg2">
                     <thead>
                     <tr>
                         <th class="tg-0pky"></th>
@@ -274,7 +305,6 @@
                     </tr>
                     </tbody>
                 </table>
-            </fieldset>
         </div>
         <br> 
         <footer >
