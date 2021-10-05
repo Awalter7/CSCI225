@@ -11,7 +11,7 @@ p{
     top: -2%;
     right: 0;
     width: 100%;
-    height: 80px;
+    height: auto;
     position: fixed;
 }
 .navbar li{
@@ -55,7 +55,7 @@ p{
     border-radius: 4px;
     border: 3px solid #3333334d;
     background-color: #111010c0;
-    height: 60%;
+    height: 55%;
     top: 25%;
     left: 0%;
     width: 23%;
@@ -66,7 +66,7 @@ p{
     border-radius: 4px;
     border: 3px solid #3333334b;
     background-color: #111010c0;
-    height: 60%;
+    height: 55%;
     top: 25%;
     right: 0%;
     width: 23%;
@@ -85,9 +85,9 @@ p{
     display: none;
 }
 .introduction h1{
+    transition: all 300ms;
     padding: 2%;
     padding-top: 70px;
-    border-top: 3px solid #4d4b4b86;
     position: absolute;
     width: 45%;
     top: 350px;
@@ -97,13 +97,14 @@ p{
     display: block;
 }
 .introduction h1:hover{
+    transform: scale(1.5);
     animation: colorchange infinite 3s alternate;
 }
-.introduction img{
-    position: absolute;
-    height: 130px;
-    left: 30%;
-    top: -240px;
+#logo{
+    position: relative;
+    top: 120px;
+    left: 40%;
+    width: 20%;
 }
 .portfolio{
     position: absolute;
@@ -119,9 +120,10 @@ p{
     display: none;
 }
 .portfolio h1{
+    transition: all 300ms;
     padding: 2%;
     padding-top: 70px;
-    border-top: 3px solid #4d4b4b86;
+
     position: absolute;
     width: 45%;
     top: 150px;
@@ -131,6 +133,7 @@ p{
     display: block;
 }
 .portfolio h1:hover{
+    transform: scale(1.5);  
     animation: colorchange infinite 3s alternate;
 }
 .schedule{
@@ -148,6 +151,7 @@ p{
     display: none;
 }
 .schedule h1{
+    transition: all 300ms;
     padding: 2%;
     padding-top: 70px;
     color: rgba(255, 255, 255, 0.479);
@@ -160,9 +164,11 @@ p{
     display: inline; 
 }
 .schedule h1:hover{
+    transform: scale(1.5);  
     animation: colorchange infinite 3s alternate;
 }
-.contact{                                                                        
+.contact{  
+                                                               
     position: absolute;
     align-self: center;
     text-align: center;
@@ -176,6 +182,7 @@ p{
     display: none;
 }
 .contact h1{
+    transition: all 300ms;
     padding: 2%;
     padding-top: 70px;
     position: absolute;
@@ -184,14 +191,15 @@ p{
     right: -70%;
 
 }
-.co
-text-decoration: none;
+.contact a{
+    text-decoration: none;
     color: rgba(255, 255, 255, 0.479);
 }
 .contact h1:hover + #pContact{
     display: block;
 }
 .contact h1:hover{
+    transform: scale(1.5);        
     animation: colorchange infinite 3s alternate;
 }
 .assignment{
@@ -209,9 +217,9 @@ text-decoration: none;
     display: none;
 }
 .assignment h1{
+    transition: all 300ms;
     padding: 2%;
     padding-top: 70px;
-    border-top: 3px solid #4d4b4b86;
     position: absolute;
     width: 45%;
     top: 150px;
@@ -225,7 +233,16 @@ text-decoration: none;
     display: block;
 }
 .assignment h1:hover{
+    transform: scale(1.5);  
     animation: colorchange infinite 3s alternate;
+}
+footer{
+    position: absolute;
+    bottom: 0PX;
+    left: 0;
+    height: 30px;
+    width: 100%;
+    background-color: #111010c0;
 }
 @keyframes colorchange {
     from{
