@@ -13,8 +13,15 @@
                 font-family: sans-serif;
             }
             body h1{
+                color: rgba(255, 255, 255, 0.479);
                 font-size: 2vw;
                 font-family: myfont;
+            }
+            body p{
+                color: rgba(255, 255, 255, 0.479);
+            }
+            body li{
+                color: rgba(255, 255, 255, 0.479);
             }
             @font-face {
                 font-family: myfont;
@@ -22,20 +29,27 @@
             }
         </style>
         <link rel ="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
     
     <body>
 
         
-        <div class = "navbar">
-            <ul>
-                <li ><a href="https://usca.edu/">USCA main website</a></li>
-                <li><a href="#assignment">Assignment</a></li>
-                <li><a href="#contact">Contact Information</a></li>
-                <li id = "gitlink"><a href="https://github.com/awalter7">GitHub</a></li> 
-                <li><a href="https://youtu.be/tHuu6Ysckmg">Youtube Video</a></li> 
-            </ul>
-        </div>
+        <nav class="navbar navbar-custom fixed-top navbar-expand-lg">
+            <a class="navbar-brand">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="ContactMe.html">Contact<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="https://www.usca.edu">USCA</a>
+                <a class="nav-item nav-link" href="https://www.github.com/awalter7">GitHub</a>
+            </div>
+            <span class="navbar-text">
+                [AW]
+            </span>
+        </nav>
         <div class = "underlaycenter">
         </div>
         <div class = "underlayleft">
