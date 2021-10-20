@@ -10,11 +10,18 @@ body p{
 body li{
     color: rgba(255, 255, 255, 0.479);
 }
-a:hover{
-   animation: colorchange infinite 3s alternate;
-}
 p{
     line-height: 3vw;
+}
+.navbar{    
+    background-color: #111010c0;
+    float: right;
+    font-size: 20px;
+    top: -2%;
+    right: 0;
+    width: 100%;
+    height: auto;
+    position: fixed;
 }
 .navbar-custom{
     color: white;
@@ -23,32 +30,36 @@ p{
 }
 .navbar-custom .navbar-nav{
    padding-top: 10px;
+} 
+.navbar-custom .navbar-nav{
+   padding-top: 10px;
 }
 .navbar-custom .navbar-brand{
-   padding-top: 13px;
+   font: larger;
+   padding-top: 12px;
 }
-.navbar-custom .navbar-text{
-   font-size: larger;
-   padding-left: 85%;
+.navbar-custom .nav-item:hover{
+   transform: scale(1.2);
+   color: white;
 }
-.navbar li{
-    text-align:center;
-    line-height: 50px;
-    display: inline-block;
-    top: 0%;
-    width: 200px;
-    height: 60px;
-    list-style-type: none;
 
+.navbar-custom .navbar-text{
+   font-size: 30px;
+   padding-bottom: 15px;
+   padding-left: 77.5%;
+}
+.navbar-custom .navbar-brand{
+   padding-left: 20px;
+}
+.navbar-custom .nav-item{
+   right: 300px;
+   margin-left: 20px;
 }
 .navbar a{
+    transition: all 300ms;
     height: 60px; 
-    font-size: larger;
     text-decoration: none;
     color: rgba(255, 255, 255, 0.705);
-}
-.navbar a:hover{
-    animation: colorchange infinite 3s alternate;
 }
 #gitlink{
     float: right;

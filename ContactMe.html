@@ -20,39 +20,39 @@
     <body>
         <nav class="navbar navbar-custom fixed-top navbar-expand-lg">
             <a class="navbar-brand">Contact page</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-item nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                <a class="nav-item nav-link" href="https://www.usca.edu">USCA</a>
-                <a class="nav-item nav-link" href="https://www.github.com/awalter7">GitHub</a>
+                <a class="nav-item nav-link d-none d-xl-block" href="index.html">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link d-none d-xl-block" href="https://www.usca.edu">USCA</a>
+                <a class="nav-item nav-link d-none d-xl-block" href="https://www.github.com/awalter7">GitHub</a>
             </div>
-            <span class="navbar-text">
+            <span class="navbar-text d-none d-sm-none d-md-none d-lg-block d-xl-block">
                 [AW]
             </span>
         </nav>
-        <div class = container>
-        <div class = contactMe>
+        <div class = "backCan">
+        <div class = "container">
+        <div class = "contactMe">
             <form>
                 <div class = "form-row">
                     <div class = "form-group col-md-6">
                         <label for="textInput1">First Name</label>
-                        <input type="text" class="form-control" id="textInput1" aria-describedby="nameHelp" placeholder="Enter First Name">
+                        <input type="text" class="form-control" id="textInput1"  placeholder="Enter First Name" required>
                     </div>
                     <div class = "form-group col-md-6">
                         <label for="textInput2">Last Name</label>
-                        <input type="text" class="form-control" id="textInput2" aria-describedby="nameHelp" placeholder="Enter Last Name">
+                        <input type="text" class="form-control" id="textInput2"  placeholder="Enter Last Name" required>
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="textInput3">Prefered Name</label>
-                    <input type="text" class="form-control" id="textInput3" aria-describedby="nameHelp" placeholder="Enter Prefered Name">
+                    <input type="text" class="form-control" id="textInput3"  placeholder="Enter Prefered Name" required>
                 </div>
                 <div class="form-group">
                     <label for="InputEmail">Email address</label>
-                    <input type="email" class="form-control" id="InputEmail" aria-describedby="emailHelp" placeholder="Enter email">
+                    <input type="email" class="form-control" id="InputEmail"  placeholder="Enter email" required>
                     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                 </div>
                 <div class = "form-row"> 
@@ -75,7 +75,7 @@
                             </label>
                           </div>
                           <div class="form-check">
-                            <input class="form-check-input" type="radio" name="Radios" id="Radios2" value="no">
+                            <input class="form-check-input" type="radio" name="Radios" id="Radios2" value="no" >
                             <label class="form-check-label" for="Radios2">
                               No
                             </label>
@@ -104,11 +104,15 @@
                 <button type="reset" class="btn btn-danger">Reset</button>
             </form>
         </div>
-        <div class = "VideoFrame">
+        <div class = "VideoFrame ">
             <div class="embed-responsive embed-responsive-16by9">
                 <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/watch?v=FjHGZj2IjBk&list=RD5qap5aO4i9A&start_radio=1" allowfullscreen></iframe>
               </div>
         </div>
         </div>
+        </div>
+        <footer >
+            Ⓒ 2020 Austin Walter
+        </footer>
     </body>
 </html>
