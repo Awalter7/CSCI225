@@ -13,8 +13,15 @@
                 font-family: sans-serif;
             }
             body h1{
+                color: rgba(255, 255, 255, 0.479);
                 font-size: 2vw;
                 font-family: myfont;
+            }
+            body p{
+                color: rgba(255, 255, 255, 0.479);
+            }
+            body li{
+                color: rgba(255, 255, 255, 0.479);
             }
             @font-face {
                 font-family: myfont;
@@ -22,20 +29,26 @@
             }
         </style>
         <link rel ="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
  <!-- Document body Starts -->
     <body>
 
-        
-        <div class = "navbar">
-            <ul>
-                <li ><a href="https://usca.edu/">USCA main website</a></li>
-                <li><a href="#assignment">Assignment</a></li>
-                <li><a href="#contact">Contact Information</a></li>
-                <li id = "gitlink"><a href="https://github.com/awalter7">GitHub</a></li> 
-                <li><a href="https://youtu.be/tHuu6Ysckmg">Youtube Video</a></li> 
-            </ul>
-        </div>
+
+        <nav class="navbar navbar-custom fixed-top navbar-expand-lg">
+            <a class="navbar-brand">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-nav">
+                <a class="nav-item nav-link nav-link d-none d-xl-block" href="ContactMe.html">Contact<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link nav-link d-none d-xl-block" href="https://www.usca.edu">USCA</a>
+                <a class="nav-item nav-link nav-link d-none d-xl-block" href="https://www.github.com/awalter7">GitHub</a>
+            </div>
+            <span class="navbar-text navbar-text d-none d-sm-none d-md-none d-lg-block d-xl-block">
+                [AW]
+            </span>
+        </nav>
         <div class = "underlaycenter">
         </div>
         <div class = "underlayleft">
@@ -59,18 +72,24 @@
             <div class = "assignment"> 
                 <h1>Assignments</h1>
                 <ol id = "olAssignment">
-                    <li><a href="doc/Assignment1.pdf">Assignment 1</a></li>
-                        <ul>
-                            <li><p>A simple assignment demenstrating my fundamental understanding up html code structure and format.</p></li>
-                        </ul>
-                    <li><a href="doc/Assignment2.pdf">Assignment 2</a></li>
-                    <ul>
-                        <li><p>This assignment demenstrated my understanding of Forms and their elements with the conact form page</p></li>
-                    </ul>
-                    <li><a href="doc/Assignment3.pdf">Assignment 3</a></li>
-                    <ul>
-                        <li><p>This assignment demenstrated my understanding of CSS and page flow/layout</p></li>
-                    </ul>
+                    <li>
+                        <a href="doc/Assignment1.pdf">Assignment 1</a>
+                        <br>
+                        <p>A simple assignment demenstrating my fundamental understanding up html code structure and format.</p>
+                    </li>
+                        
+                    <li>
+                        <a href="doc/Assignment2.pdf">Assignment 2</a>
+                        <br>
+                        <p>This assignment demenstrated my understanding of Forms and their elements with the conact form page</p>
+                    </li>
+                        
+                    <li>
+                        <a href="doc/Assignment3.pdf">Assignment 3</a>
+                        <br>
+                        <p>This assignment demenstrated my understanding of CSS and page flow/layout</p>
+                    </li>
+                        
                 </ol>
             </div>
 
