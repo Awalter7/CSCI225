@@ -1,3 +1,51 @@
+body a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.479);
+}
+body a:hover{
+    transform: scale(1.2);   
+    text-decoration: none;
+    color:white;
+}
+body h1{
+    height: 5vh;
+    border: 2px solid #3333338a;
+    border-radius: 4px 12px 0px 0px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.479);
+    font-size: 2vw;
+    font-family: myfont;
+    letter-spacing: 1px;
+}
+body p{
+    line-height: 30px;
+    font-family: myfont;
+    color: rgba(255, 255, 255, 0.479);
+}
+body p::first-letter{
+    color: white;
+    border-bottom: 2px solid white;
+    font-size: larger;
+}
+nav{
+    font-family: myfont;
+}
+body ol li p{
+    font-family: myfont;
+    color: rgba(255, 255, 255, 0.479);
+    font-weight: 800;
+    
+}
+body ol, body ol h2{
+    font-weight: 800;
+    font-family: myfont;
+    color: white;
+}
+@font-face {
+    font-family: myfont;
+    src: url(../font/AltMono-Regular.otf) format("truetype");
+    
+}
 .backCan{
     position: absolute;
     top: 150px;
@@ -34,7 +82,7 @@
 .navbar-custom .navbar-text{
     font-size: 30px;
     padding-bottom: 15px;
-    padding-left: 75%;
+    padding-left: 66%;
 }
 .navbar-custom .navbar-brand{
     padding-left: 20px;
