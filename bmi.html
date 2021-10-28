@@ -71,7 +71,7 @@
                 var age = document.getElementById("ageValue").value;
                 
                 if(w > 0 && h > 0){
-                    bmi = (((parseFloat(w) * 0.45359237) / (h*2.54) / (parseFloat(h)*2.54))*10000).toFixed(2);
+                    bmi = ((parseFloat(w))*703/((parseFloat(h))*(parseFloat(h)))).toFixed(2);
                     document.getElementById("bmiNum").textContent = "Your BMI is " + bmi;
                 }else{
                     document.getElementById("bmiNum").textContent = "Please enter ONLY numbers";
@@ -108,7 +108,7 @@
                             var delayInMilliseconds1 = 5000; //1 second
                             var delayInMilliseconds2 = 5000; //1 second
                             setTimeout(function() {
-                                alert("You are either within the OVER WEIGHT or OBESE categroy.\nOPENING informational link.");
+                                alert("You are either within the OVER WEIGHT or OBESE categroy.\nopening informational link.");
                                 setTimeout(function() {
                                     window.open("http://www.nhlbi.nih.gov/health/public/heart/obesity/lose_wt/control.htm", "_blank", "toolbar=yes,top=500,left=500,width=900,height=900");
 
