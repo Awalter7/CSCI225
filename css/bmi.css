@@ -1,0 +1,70 @@
+body{
+    background-image: radial-gradient(49% 81% at 45% 47%, #00000045 0%, #073AFF00 100%),radial-gradient(142% 91% at -6% 74%, #000000E3 0%, #FF000000 99%),radial-gradient(113% 91% at 17% -2%, #15D70AFF 1%, #FF000000 99%),radial-gradient(142% 91% at 83% 7%, #140DD7FF 1%, #FF000000 99%),radial-gradient(142% 91% at -6% 74%, #BB0FB7FF 1%, #FF000000 99%),radial-gradient(142% 91% at 109% 71%, #520F3BE0 4%, #020202FF 95%);
+}
+.bmi{
+    align-self: center;
+    background-color: rgba(78, 17, 78, 0.281);
+}
+.mii{
+    text-align: center;
+    left: 590px;
+    background-color: rgba(78, 17, 78, 0.281);
+}
+#miiCharacter{
+    top: 20px;
+    max-height: 200px;
+}
+.bmi, .mii{
+    color: #999;
+    position: absolute;
+    top: 30vh;
+    height: 400px;
+    width: 570px;
+    border-radius: 20px/30px;
+    box-shadow: 10px 2px 40px 20px rgba(0, 0, 0, 0.425);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 0px 5px 10px rgba(0, 0, 0, 0.418);
+    
+}
+input, button, select{
+    border: none;
+    color: #999;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.932);
+    background-color: rgba(78, 17, 78, 0.041);
+}
+.bmi h1{
+    font-size: 2em;
+    font-weight: 400;
+   
+}
+#rangeValue {
+    top: 0px;
+    position: relative;
+    display: block;
+    text-align: center;
+    font-size: 3em;
+    font-weight: 400;
+}
+.range {
+    
+    width: 400px;
+    height: 15px;
+    -webkit-appearance: none;
+    background-color: rgba(78, 17, 78, 0.041);
+    outline: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: inset 0 0px 5px rgb(0, 0, 0);
+    
+  }
+  .range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #747070;
+    cursor: pointer;
+    border: 4px solid rgb(255, 255, 255);
+    box-shadow: -407px 0 0 400px #0e0d0da1;
+  }

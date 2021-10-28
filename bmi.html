@@ -1,0 +1,162 @@
+<html>
+    <head>
+        <link rel ="stylesheet" href="css/bmi.css">
+    </head>
+    <body>
+        
+        <div class="bmi">
+            <h1>English BMI Calculator</h1>
+            <form>
+                
+                
+                <input type="text" id = "name" onfocusout="getInputName()">
+
+                <p id = "welcome"></p>
+
+                <input type="text" id = "weight">
+                <label for="weight">Weight in Pounds</label>
+                <br>
+                <br>
+                <input type="text" id = "height">
+                <label for="height">Height in inches</label>
+                
+                <br>
+                <br>
+                <div class="dropdown">
+                    <select id = ageValue>  
+                    <option value = "4">Over 50  
+                    </option>  
+                    <option value = "3">31 - 50   
+                    </option>  
+                    <option value = "2">20 - 30
+                    </option>  
+                    <option value = "1">Under 20  
+                    </option>  
+                    </select>  
+                    <label>Age</label> 
+                </div>
+                <br>
+                <Button type="button"  id="cmpBMI">Compute BMI</Button>
+
+                <p id = "bmiNum">Your BMI is</p>
+                <br>
+                <br>
+                <br>
+                <p id="ageInfo"></p>
+            </form>
+        </div>
+        <div class = "mii">
+            <div>
+                <span id="rangeValue">Normal</span>
+                <Input class="range" id = "rangeBmi" type="range" value="0" min="10" max="35" disabled></Input>
+            </div>
+            <img src="img\mii.png" id = "miiCharacter" alt="mii character">
+        </div>
+        </body>
+        <script>
+            var scaleFactor = 1;
+            var bmi;
+            document.getElementById("cmpBMI").addEventListener("click", getBMI)
+            document.getElementById("cmpBMI").addEventListener("click", slide)
+            document.getElementById("cmpBMI").addEventListener("click", rangeScale)
+
+            function getInputName() {
+                var x = document.getElementById("name");
+                document.getElementById("welcome").textContent = "Hey " + x.value + " Thanks for using our BMI calculator";
+            }
+
+            function getBMI(pass) {
+                var w = document.getElementById("weight").value;
+                var h = document.getElementById("height").value;
+                var age = document.getElementById("ageValue").value;
+                
+                if(w > 0 && h > 0){
+                    bmi = (((parseFloat(w) * 0.45359237) / (h*2.54) / (parseFloat(h)*2.54))*10000).toFixed(2);
+                    document.getElementById("bmiNum").textContent = "Your BMI is " + bmi;
+                }else{
+                    document.getElementById("bmiNum").textContent = "Please enter ONLY numbers";
+                
+                }
+
+                if(age == 1){
+                    document.getElementById("ageInfo").textContent = "You are under 20 please visit \n https://www.cdc.gov/growthcharts/data/set1clinical/cj41l023.pdf \n to determine  your weight category"
+
+                }
+            }
+            function rangeScale() {
+                var w = document.getElementById("weight").value;
+                var h = document.getElementById("height").value;
+
+                if(w > 0 && h > 0){
+                    var bmi = document.getElementById('rangeBmi').value;
+                    var elm = document.getElementById('miiCharacter');
+                    var scale = 'scaleX(' + scaleFactor + ')'
+                    if(bmi <= 18.5){
+                        elm.animate([{transform: scale},{transform: 'scaleX(.5)'}],{duration: 3000, fill: 'forwards'});
+                        document.getElementById('rangeValue').innerHTML = "Underweight";
+                        scaleFactor = .5
+                        
+                    }else if(bmi  > 18.5 && bmi <= 25){
+                        elm.animate([{transform: scale}, {transform: 'scaleX(1)'}],{duration: 3000, fill: 'forwards'});
+                        document.getElementById('rangeValue').innerHTML = "Normal";
+                        scaleFactor = 1
+                    }else if(bmi  > 25 && bmi  <= 30){
+                        elm.animate([{transform: scale}, {transform: 'scaleX(2)'}],{duration: 3000, fill: 'forwards'});
+                        document.getElementById('rangeValue').innerHTML = "Over Weight";
+                        scaleFactor = 2
+                        if(bmi > 28.5){
+                            var delayInMilliseconds1 = 5000; //1 second
+                            var delayInMilliseconds2 = 5000; //1 second
+                            setTimeout(function() {
+                                alert("You are either within the OVER WEIGHT or OBESE categroy.\nOPENING informational link.");
+                                setTimeout(function() {
+                                    window.open("http://www.nhlbi.nih.gov/health/public/heart/obesity/lose_wt/control.htm", "_blank", "toolbar=yes,top=500,left=500,width=900,height=900");
+
+                                },delayInMilliseconds2);
+                            },delayInMilliseconds1);
+                            
+                            
+                        }
+                    }else if(bmi > 30){
+                        elm.animate([{transform: scale}, {transform: 'scaleX(3)'}],{duration: 3000, fill: 'forwards'});
+                        document.getElementById('rangeValue').innerHTML = "Obese";
+                        scaleFactor = 3
+                    }   
+                }
+            }
+
+            function slide() {  
+                var w = document.getElementById("weight").value;
+                var h = document.getElementById("height").value;
+
+
+                console.log(isNaN(w) );
+                console.log(isNaN(h));
+
+                if(w > 0 && h > 0){
+                    var slider = document.getElementById("rangeBmi"),
+                    delayInSeconds = .05;
+                    num = 1,
+                    sliderNum = bmi;
+
+                    var i = 0;
+                    var intervalId = setInterval(
+                        function() {   
+                            num = (num === sliderNum) ? 1:num + 1;
+                            slider.value = num;
+                            if(i === Math.trunc(sliderNum)){
+                                clearInterval(intervalId);
+                            }
+                            console.log(i);
+                            console.log(sliderNum);
+                            i++;
+
+                    }, delayInSeconds * 2000);
+
+                    document.getElementById("rangeBmi").value = bmi;
+                }
+            }
+
+        </script>
+    </body>
+</html>
