@@ -1,5 +1,6 @@
 body a{
     text-decoration: none;
+    letter-spacing: 2px;
     color: rgba(255, 255, 255, 0.479);
 }
 body a:hover{
@@ -10,7 +11,7 @@ body a:hover{
 body h1{
     height: 5vh;
     border: 2px solid #3333338a;
-    border-radius: 4px 12px 0px 0px;
+    border-radius: 4px 4px 0px 0px;
     text-transform: uppercase;
     color: rgba(255, 255, 255, 0.479);
     font-size: 2vw;
@@ -19,6 +20,7 @@ body h1{
 }
 body p{
     line-height: 30px;
+    text-align: center;
     font-family: myfont;
     color: rgba(255, 255, 255, 0.479);
 }
@@ -41,6 +43,7 @@ body ol, body ol h2{
     font-family: myfont;
     color: white;
 }
+
 @font-face {
     font-family: myfont;
     src: url(../font/AltMono-Regular.otf) format("truetype");
@@ -158,8 +161,8 @@ body ol, body ol h2{
     transform: scale(1.5);
     color: white ;
 }
-#logo{
-    position: relative;
+#logo1{
+    position: absolute;
     top: 90px;
     left: 40%;
     width: 20%;
@@ -205,7 +208,6 @@ body ol, body ol h2{
     left: 30%;
     width: 40%;
     right: 30%;
-    
 }
 #tg2{
     display: none;
@@ -287,8 +289,12 @@ body ol, body ol h2{
     right: -70%;
 }
 .assignment ol a{
+    
     text-decoration: none;
     color:rgba(255, 255, 255, 0.479);
+}
+.assignment ol li{
+    list-style-type: alians;
 }
 @counter-style alians {
     system: cyclic;
@@ -329,7 +335,9 @@ footer{
 .ContactMe{
     text-align: center;
 }
-
+.tg tr:nth-child(even){
+    background-color: lightgray;
+}
 .tg  {
     display: inline;
     position: relative;

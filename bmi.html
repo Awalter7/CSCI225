@@ -121,6 +121,19 @@
                         elm.animate([{transform: scale}, {transform: 'scaleX(3)'}],{duration: 3000, fill: 'forwards'});
                         document.getElementById('rangeValue').innerHTML = "Obese";
                         scaleFactor = 3
+                        if(bmi > 28.5){
+                            var delayInMilliseconds1 = 5000; //1 second
+                            var delayInMilliseconds2 = 5000; //1 second
+                            setTimeout(function() {
+                                alert("You are either within the OVER WEIGHT or OBESE categroy.\nopening informational link.");
+                                setTimeout(function() {
+                                    window.open("http://www.nhlbi.nih.gov/health/public/heart/obesity/lose_wt/control.htm", "_blank", "toolbar=yes,top=500,left=500,width=900,height=900");
+
+                                },delayInMilliseconds2);
+                            },delayInMilliseconds1);
+                            
+                            
+                        }
                     }   
                 }
             }
