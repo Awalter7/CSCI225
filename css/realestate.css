@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200&display=swap');
+
+#blur{
+    filter: blur(1px)
+}
+.div-top{
+    text-align: center;
+    font-size: 24px;
+    position: relative;
+
+    background-color:rgba(141, 142, 145, 0.705);
+    border-radius: 2px 2px 0px 0px;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 40px;
+}
+#percent{
+    position: relative;
+    top: -3px;
+    left: 183px
+}
+#table{
+    visibility: hidden;
+    position: absolute;
+    text-align: center;
+    border-radius: 2px;
+    right: 31vw;
+    top: 20%;
+    width: 600px;
+    height: 400px;
+    background-color:#181818b9;
+    box-shadow: 10px 5px 50px 5px rgba(145, 144, 144, 0.397);
+}
+.tg  {
+    box-shadow: 10px 5px 50px 5px rgba(145, 144, 144, 0.397);
+    background-color:#18181879;
+    position: relative;
+    top: -140px;
+    border-collapse:collapse;
+    border-spacing:0;
+}
+.tg td{
+    letter-spacing: 0px;
+    border-color:black;
+    border-style:solid;
+    border-width:1px;
+    font-family:Arial, sans-serif;
+    font-size:14px;
+    overflow:hidden;
+    padding:1px 20px;
+    word-break:normal;
+}
+.tg th{
+    
+    border-color:black;
+    border-style:solid;
+    border-width:1px;
+    font-family:Arial, sans-serif;
+    font-size:14px;
+    font-weight:normal;
+    overflow:hidden;
+    padding:1px 20px;
+    word-break:normal;
+}
+.tg .tg-1o19{
+    background-color:#000000d3;
+    text-align:left;
+    vertical-align:top
+}
+.tg .tg-glna{
+    background-color:#000000d3;
+    text-align:left;
+    vertical-align:top
+}
+.tg .tg-0la1{
+    background-color:#000000d3;
+    width: 300px;
+    text-align:left;
+    vertical-align:topx 
+}
+.tg .tg-0lax{
+    text-align:left;
+    vertical-align:top
+}
+.tg .tg-0lax2{
+    background-color:#0f0d0dd0;
+    text-align:left;
+    vertical-align:top
+}
+.tg .tg-0lax3{
+    background-color:#000000bb;
+    text-align:left;
+    vertical-align:top
+}
+.tg .tg-og4q{
+    background-color:#000000d3;
+    text-align:left;
+    vertical-align:top
+}
+#loan-button{
+    background-color: rgba(206, 200, 200, 0.397);
+}
+.cal-button{
+    border: none;
+    text-align: center;
+    font-size: 24px;
+    position: relative;
+    background-color:rgba(141, 142, 145, 0.705);
+    border-radius: 0px 0px 2px 2px;
+    bottom: -25px;
+    left: 0px;
+    width: 100%;
+    height: 40px;
+}
+#form{
+    visibility: hidden;
+    position: absolute;
+    text-align: center;
+    border-radius: 2px;
+    right: 31vw;
+    top: 20%;
+    width: 600px;
+    height: 400px;
+    background-color:#181818b9;
+    box-shadow: 10px 5px 50px 5px rgba(145, 144, 144, 0.397);
+}
+#monthlyPayment{
+    letter-spacing: 0px;
+    position: absolute;
+    top: 20px;
+    left: 30vw;
+    
+}
+#form input{
+    position: relative;
+    border: none;
+    background-color:#18181879;
+    -webkit-box-shadow: inset -1px 3px 5px 2px rgba(0,0,0,0.57); 
+    box-shadow: inset -1px 3px 5px 2px rgba(0,0,0,0.57);
+    color: rgba(245, 231, 224, 0.637);
+    height: 20px;
+    border-radius: 5px;
+    top: 20px;
+}
+#frm-rate{
+    position: relative;
+    right: 8px;
+}
+#frm-term{
+    position: relative;
+    left: 13px;
+}
+#frm-result{
+    position: relative;
+    right: 28px;
+}
+#form label{
+    position: relative;
+    top: 20px;
+
+}
+#form button{
+    border: none;
+    font-size: 24px;
+    letter-spacing: 7px;
+    font-weight: 800;
+    background-color:rgba(141, 142, 145, 0.705);
+    position: relative;
+    width: 100%;
+    height: 40px;
+    bottom: -35px;
+    color: rgba(245, 231, 224, 0.637);
+    border-radius: 0px 0px 5px 5px;
+
+}
+#str-date-month, #str-date-year, #shw-result{
+    background-color:#18181879;
+    -webkit-box-shadow: inset -1px 3px 5px 2px rgba(0,0,0,0.57); 
+    box-shadow: inset -1px 3px 5px 2px rgba(0,0,0,0.57);
+    color: rgba(245, 231, 224, 0.637);
+    position: relative;
+    margin-top: 30px;
+}
+#frm-date label, #frm-result label{
+    top: 1px;
+}
+.navbar-custom {
+    float: left;
+    
+}
+.navbar-custom .navbar-nav a{
+    box-shadow: 10px 5px 90px 20px rgba(145, 144, 144, 0.397);
+    transition: all 300ms;
+    color: rgba(245, 231, 224, 0.637);
+    background-color:#18181879;
+    position: relative;
+    top: -10px;
+    left: 0vw;
+}
+.navbar-nav a:hover{
+    transform: scale(1.2); 
+    border-radius: 0px 0px 4px 4px; 
+    color:white;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.navbar-nav #nav-last:hover{ 
+    border-radius: 0px 0px 4px 4px; 
+}
+
+.navbar-custom .navbar-brand{
+    color: rgba(245, 231, 224, 0.637);
+    background-color:#18181879;
+    position: relative;
+    border-radius: 0px 0px 0px 4px;
+
+    top: -10.5px;
+    left: 1vw;
+}
+#nav-last{
+    border-radius: 0px 0px 4px 0px;
+}
+a{
+    text-decoration: none;
+    
+}

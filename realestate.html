@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/realestate.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <style>
+            body{
+                font-family: 'Oswald', sans-serif;
+                letter-spacing: 7px;
+                font-weight: 800;
+                background-color: black;
+                background-size: cover;
+                color: rgba(245, 231, 224, 0.637);
+                text-shadow: 1px 7px 20px rgba(0,0,0,0.98);
+            }
+            .backdrop{
+                background-image: url(img/3261048.png);
+                background-size: cover;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                width: 100%;
+                height:100%;
+            }
+        </style>
+        <title>Document</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-custom fixed-top navbar-expand-lg">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-nav">
+                <a class="nav-item nav-link nav-link ">Buy</a>
+                <a class="nav-item nav-link nav-link ">Sell<span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link nav-link " id = "loan-button">Loan</a>
+                <a class="nav-item nav-link nav-link " id = "nav-last">About</a>
+            </div>
+        </nav>
+
+        <div class = "backdrop" id = "blur"></div>
+         <!-- Div for monthely payment to be shown -->
+        <div id = "monthlyPayment"></div>
+        <!-- Div for table to be shown -->
+        <div id = "table"></div>
+         <!-- Div Form for interest calculation -->
+        <div id = "form">
+
+            <div class = "div-top">Loan Information</div>
+
+             <!-- loan amount in USD-->
+            <div id = "frm-amnt">
+                <label>Loan Amount</label>
+                <input type="text" id = "ln-amnt">
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;$
+            </div>  
+
+            <!-- Interest rate as a percentage -->
+            <div>
+                <label for="In-rate">Interest Rate</label>
+                <input type="text" id = "in-rate">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;% 
+            </div>
+
+            <!-- Length of term in years -->
+            <div id = "frm-term">
+                <label for="in-term">Loan Term</label>
+                <input type="text" id = "in-term">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Years
+            </div>
+
+            <div id = "frm-date">
+                <label for="str-date">Start Date</label>
+                <!-- Month dropdown with months represented by numbers -->
+                <select id="str-date-month" name="month">
+                    <option>month</option>
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+                </select>
+                <select id = "str-date-year" name="year"></select>
+            </div>
+
+            <!-- drop down menue for selection of sorting by month or year -->
+            <div id = "frm-result">
+                <label for="shw-result">Sort By</label>
+
+                <select id="shw-result" name="showResult">
+                    <option value="01">Year</option>
+                    <option value="02">Month</option>
+                </select>
+            </div>
+
+            <button id="cal-button">Calculate</button>
+
+            <script>
+                //initilizes the table, monthley payment element varables 
+                var tableDiv = document.getElementById('table');
+                var monthDiv = document.getElementById('monthlyPayment');
+                //shows the form div if the loan nav bar item it clicked
+                document.getElementById('loan-button').addEventListener("click", function(){
+                    form.style.visibility = 'visible';
+                    monthDiv.style.visibility = 'hidden';
+                    tableDiv.style.visibility = 'hidden';
+                });
+
+                document.getElementById('cal-button').addEventListener("click", function(){
+                    
+                    //gets the form elements
+                    var loanAmount   = document.getElementById('ln-amnt').value;
+                    var interestRate = document.getElementById('in-rate').value/100;
+                    var interestTerm = document.getElementById('in-term').value;
+                    var dateMonth    = document.getElementById('str-date-month').value;
+                    var dateYear     = document.getElementById('str-date-year').value;
+                    var mOrYear      = document.getElementById('shw-result').value;
+
+                    //validates the inputs
+                    if(isNaN(loanAmount) == true || isNaN(interestRate) == true || isNaN(interestTerm) == true || isNaN(dateMonth) == true){
+                        console.log("it worked - the user forgot to enter an input or enterd a letter by mistake or didnt chose a month");
+                        if (loanAmount== "") {
+                            alert("Loan Amount must be filled out");
+                        }else if(isNaN(loanAmount) == true){
+                            alert("Loan Amount must be a number");
+                        }
+                        if (interestTerm == "") {
+                            alert("Term must be filled out");
+                        }else if(isNaN(interestTerm) == true){
+                            alert("Term must be a number");
+                        }
+                        if (interestRate== "") {
+                            alert("Interest Rate must be filled out");
+                        }else if(isNaN(interestRate) == true ){
+                            alert("Interest Rate must be a number");
+                        }
+                        if(isNaN(dateMonth) == true){
+                            alert("You must chose a month");
+                        }
+                    //if the valadation passes it calculates the interest
+                    }else{
+                        var cell = 4;
+                        var row  = 1;
+
+                        //varable decloration for the interest math
+                        var monthlyInterest = interestRate/12;
+                        var x = (1-Math.pow((1+monthlyInterest), -(interestTerm*12)));
+                        var monthlyPayment = loanAmount * ((monthlyInterest)/x);
+                        var key         = false;
+                        var balance     = loanAmount;
+                        var yearCounter = 0;
+                        var monthCounter= 0;
+                        var interestPM  = 0;
+                        var interestPY  = 0;
+                        var principalPM = 0;
+                        var principalPY = 0;
+
+                        var output = "<table class=\"tg\"><tr><th class=\"tg-0la1\">Date</th><th class=\"tg-glna\">Interest</th><th class=\"tg-1o19\">principle</th><th class=\"tg-og4q\">Balance</th></tr>"
+
+                        /*calculates the interest of a loan for each year by using two for loops. 
+                        The first for loop calculates the interest per month and per year. As well
+                        as the principle per month and principle per year. The interest per month 
+                        is calculated by multiplying the current balance by the monthly interest 
+                        rate. The interest per year is calculated by adding the interest per month 
+                        (interestPM) to the interest per year (interestPY) which starts at 0. 
+                        The principle per month (principalPM) is calculated by subtracting the interest
+                        per month from the monthly payment (monthlyPayment). The principal per year 
+                        (principalPY) is calculated by adding the principal per month (principalPM) 
+                        to the principal per year (principalPY) which starts at 0. The balance is 
+                        calculated subtracting the principal per month (principalPM) from the balance 
+                        which starts at the user's balance and loops until it reaches the interest
+                        term the user entered as well as when it reaches 0*/
+                        for(var i = 0; i < interestTerm && yearCounter < interestTerm; i++){
+                            for(var x = 0; x < 12; x++ ){
+                                interestPM  = balance * monthlyInterest;
+                                interestPY  = interestPY + interestPM;
+                                principalPM = monthlyPayment - interestPM;
+                                principalPY =  principalPY + principalPM
+                                balance = balance - principalPM;
+                                //display soted by month
+                                    //if the month is even the back ground color changes 
+                                if(mOrYear == 2 && (x+1) % 2 == 0){
+                                        //its the last month in the year the out put date changes from (12/XXXX - 13/XXXX) to (12/XXXX - 1/XXXX)   
+                                    if(x==11){
+                                        output = output + "<tbody><tr class=\"tg-0lax3\"><td  class=\"tg-0lax\">"  + (parseInt(dateMonth) +  monthCounter) + "/" + (parseInt(dateYear) + yearCounter) + "-"+ 1 + "/" + (parseInt(dateYear) + (yearCounter)+1) + "</td><td class=\"tg-0lax\">"+ "$" +  interestPY.toFixed(2) + "        " +"</td><td class=\"tg-0lax\">" + "$" +  principalPY.toFixed(2) + "        " +" </td><td class=\"tg-0lax\">" + "$" +  balance.toFixed(2) + "        " +"</td></tr></tbody>"  
+                                    }else{
+                                        output = output + "<tbody><tr class=\"tg-0lax3\"><td  class=\"tg-0lax\">"  + (parseInt(dateMonth) +  monthCounter) + "/" + (parseInt(dateYear) + yearCounter) + "-"+ (parseInt(dateMonth) +  monthCounter + 1)+ "/" + (parseInt(dateYear) + (yearCounter)) + "</td><td class=\"tg-0lax\">"+ "$" +  interestPY.toFixed(2) + "        " +"</td><td class=\"tg-0lax\">" + "$" +  principalPY.toFixed(2) + "        " +" </td><td class=\"tg-0lax\">" + "$" +  balance.toFixed(2) + "        " +"</td></tr></tbody>"  
+                                    }
+                                    //if the month is odd the back ground color changes 
+                                }else if(mOrYear == 2){
+                                    if(x == 11){
+                                        output = output + "<tbody><tr class=\"tg-0lax2\"><td  class=\"tg-0lax\">"  + (parseInt(dateMonth) +  monthCounter) + "/" + (parseInt(dateYear) + yearCounter) + "-"+ 1 + "/" + (parseInt(dateYear) + (yearCounter)+1) + "</td><td class=\"tg-0lax\">"+ "$" +  interestPY.toFixed(2) + "        " +"</td><td class=\"tg-0lax\">" + "$" +  principalPY.toFixed(2) + "        " +" </td><td class=\"tg-0lax\">" + "$" +  balance.toFixed(2) + "        " +"</td></tr></tbody>"  
+                                    }else{
+                                        output = output + "<tbody><tr class=\"tg-0lax2\"><td  class=\"tg-0lax\">"  + (parseInt(dateMonth) +  monthCounter) + "/" + (parseInt(dateYear) + yearCounter) + "-"+ (parseInt(dateMonth) +  monthCounter + 1) + "/" + (parseInt(dateYear) + (yearCounter)) + "</td><td class=\"tg-0lax\">"+ "$" +  interestPY.toFixed(2) + "        " +"</td><td class=\"tg-0lax\">" + "$" +  principalPY.toFixed(2) + "        " +" </td><td class=\"tg-0lax\">" + "$" +  balance.toFixed(2) + "        " +"</td></tr></tbody>"  
+                                    }
+                                }
+                                monthCounter++;
+                            }
+                            monthCounter=0;
+                            
+                            //display sorted by Year
+                            if(mOrYear == 1 && (i+1) % 2 == 0){   
+                                output = output + "<tbody><tr class=\"tg-0lax3\"><td  class=\"tg-0lax\">"  + parseInt(dateMonth) + "/" + (parseInt(dateYear) + yearCounter) + "-"+ dateMonth + "/" + (parseInt(dateYear) + (yearCounter+1)) + "</td><td class=\"tg-0lax\">"+ "$" +  interestPY.toFixed(2) + "        " +"</td><td class=\"tg-0lax\">" + "$" +  principalPY.toFixed(2) + "        " +" </td><td class=\"tg-0lax\">" + "$" +  balance.toFixed(2) + "        " +"</td></tr></tbody>"  
+                            }else if(mOrYear == 1){
+                                output = output + "<tbody><tr class=\"tg-0lax2\"><td  class=\"tg-0lax\">"  + parseInt(dateMonth) + "/" + (parseInt(dateYear) + yearCounter) + "-"+ dateMonth + "/" + (parseInt(dateYear) + (yearCounter+1)) + "</td><td class=\"tg-0lax\">"+ "$" +  interestPY.toFixed(2) + "        " +"</td><td class=\"tg-0lax\">" + "$" +  principalPY.toFixed(2) + "        " +" </td><td class=\"tg-0lax\">" + "$" +  balance.toFixed(2) + "        " +"</td></tr></tbody>"  
+                            }
+                            yearCounter++;
+                        }
+                        //resets values after calculation 
+                        principalPY = 0;
+                        interestPY = 0;
+                        
+                        //hides the form div, and then shows the table div
+                        form.style.visibility = 'hidden';
+                        document.getElementById("table").innerHTML = output;
+                        tableDiv.style.visibility = 'visible';
+                        monthDiv.style.visibility = 'visible';
+                        //shows the monthley payment div
+                        monthDiv.innerHTML = "Monthly Payment: " + monthlyPayment.toFixed(2) ;
+                    
+                    }
+                });
+
+                //gets the drop down element
+                let dateDropdown = document.getElementById('str-date-year');
+            
+                let currentYear = new Date().getFullYear();
+                let earliestYear = 1970;
+            
+                //generates a list of years for the drop down year menue
+                while (currentYear >= earliestYear) {
+                  let dateOption = document.createElement('option');
+                  dateOption.text = currentYear;
+                  dateOption.value = currentYear;
+                  dateDropdown.add(dateOption);
+                  currentYear -= 1;
+                }
+ 
+            </script>
+        </div>
+    </body>
+</html>
